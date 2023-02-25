@@ -1,0 +1,26 @@
+- Router 1: Accounts manager
+
+Name Site: 
+
+URL:
+
+Password:
+
+Button(Generate password):
+
+Save.
+
+
+- Router 2: Password Listing Page
+admin/admin123
+
+Show table with all passwords
+
+- Search page:
+
+admin/admin123
+
+Search via domain/URL
+
+
+Information about url listing and password: API authentication.
