@@ -1,55 +1,46 @@
-import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
-import Navbar from '../components/Menu-sidebar';
+import React from 'react';
+import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody,MDBCheckbox } from 'mdb-react-ui-kit';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'; // add this line to import the styles
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
-  {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
-    width: 90,
-  },
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-  },
-];
-
-const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-];
-
-function Table() {
+export default function Table() {
   return (
-    <React.Fragment>
-        <Navbar/>
-        <div style={{ height: 400, width: '100%' }}>
-            <DataGrid
-                rows={rows}
-                columns={columns}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
-                checkboxSelection
-            />
-        </div>
-    </React.Fragment>
+      <MDBTable align='middle'>
+        <MDBTableHead light>
+          <tr>
+            <th scope='col'>
+              <MDBCheckbox></MDBCheckbox>
+            </th>
+            <th scope='col'>Lorem</th>
+            <th scope='col'>Ipsum</th>
+            <th scope='col'>Dolor</th>
+          </tr>
+        </MDBTableHead>
+        <MDBTableBody>
+          <tr>
+            <th scope='col'>
+              <MDBCheckbox></MDBCheckbox>
+            </th>
+            <td>Sit</td>
+            <td>Amet</td>
+            <td>Consectetur</td>
+          </tr>
+          <tr>
+            <th scope='col'>
+              <MDBCheckbox></MDBCheckbox>
+            </th>
+            <td>Adipsicing</td>
+            <td>Elit</td>
+            <td>Sint</td>
+          </tr>
+          <tr>
+            <th scope='col'>
+              <MDBCheckbox></MDBCheckbox>
+            </th>
+            <td>Hic</td>
+            <td>Fugiat</td>
+            <td>Temporibus</td>
+          </tr>
+        </MDBTableBody>
+      </MDBTable>
   );
 }
-
-export default Table;

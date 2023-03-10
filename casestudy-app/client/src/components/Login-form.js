@@ -1,47 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBInput,
+  MDBIcon,
+  MDBCheckbox
+}
+from 'mdb-react-ui-kit';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'; // add this line to import the styles
 import '../css/login.css';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // handle login logic here
-  };
-
-  const handleForgotPassword = () => {
-    // handle forgot password logic here
-  };
-
   return (
-    <div className="login">
-      <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Sign In</button>
-      </form>
-      <div className="forgot-password">
-        <a href="#" onClick={handleForgotPassword}>Forgot Password</a>
-      </div>
-    </div>
+    <MDBContainer fluid>
+
+      <MDBRow className='d-flex justify-content-center align-items-center h-100'>
+        <MDBCol col='12'>
+
+          <MDBCard className='bg-white my-5 mx-auto' style={{borderRadius: '1rem', maxWidth: '500px'}}>
+            <MDBCardBody className='p-5 w-100 d-flex flex-column'>
+
+              <h2 className="fw-bold mb-2 text-center">Sign in</h2>
+              <p className="text-white-50 mb-3">Please enter your login and password!</p>
+
+              <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
+              <MDBInput wrapperClass='mb-4 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
+
+              <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
+
+              <MDBBtn size='lg'>
+                Login
+              </MDBBtn>
+
+              <hr className="my-4" />
+
+              <MDBBtn className="mb-2 w-100" size="lg" style={{backgroundColor: '#dd4b39'}}>
+                <MDBIcon fab icon="google" className="mx-2"/>
+                Sign in with google
+              </MDBBtn>
+
+              <MDBBtn className="mb-4 w-100" size="lg" style={{backgroundColor: '#3b5998'}}>
+                <MDBIcon fab icon="facebook-f" className="mx-2"/>
+                Sign in with facebook
+              </MDBBtn>
+
+            </MDBCardBody>
+          </MDBCard>
+
+        </MDBCol>
+      </MDBRow>
+
+    </MDBContainer>
   );
 }
 
