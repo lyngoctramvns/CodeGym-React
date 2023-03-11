@@ -1,10 +1,11 @@
 import React from 'react';
-import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody,MDBCheckbox } from 'mdb-react-ui-kit';
+import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody, MDBCheckbox } from 'mdb-react-ui-kit';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'; // add this line to import the styles
 
 export default function Table() {
   return (
-      <MDBTable align='middle'>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+      <MDBTable align='middle' style={{ width: '70%' }}>
         <MDBTableHead light>
           <tr>
             <th scope='col'>
@@ -42,5 +43,6 @@ export default function Table() {
           </tr>
         </MDBTableBody>
       </MDBTable>
+    </div>
   );
 }
