@@ -12,8 +12,20 @@ import {
 }
 from 'mdb-react-ui-kit';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'; // add this line to import the styles
+import {useRef, useState, useEffect} from 'react';
 
 function RegistrationForm() {
+  const userRef = useRef();
+  const errRef = useRef();
+
+  const [firstname,setFirstName] = useState('');
+  const [validfname,setValidFName] = useState(false);
+  const [fnamefocus,setFNameFocus] = useState(false);
+
+  const [lastname, setLastName ] = useState('');
+  const [validlname,setValidLName] = useState(false);
+
+  // const  
   return (
     <MDBContainer fluid style = {{width: '50%'}}>
 
