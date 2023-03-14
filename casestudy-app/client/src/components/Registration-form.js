@@ -24,6 +24,7 @@ function RegistrationForm() {
 
   const [lastname, setLastName ] = useState('');
   const [validlname,setValidLName] = useState(false);
+  const [lname,setLNameName] = useState(false);
 
   // const  
   return (
